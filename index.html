@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Машиностроительный завод</title>
+  <!-- Подключение GSAP и ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Навигационная панель -->
+  <nav class="navbar">
+    <a href="index.html">
+      <img src="img/i.png" alt="Завод" loading="lazy">
+    </a>
+    
+    <!-- Добавляем бургер-иконку -->
+    <div class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  
+    <ul class="nav-links">
+      <li><a href="#about">О нас</a></li>
+      <li><a href="#specialization">Специализация</a></li>
+      <li><a href="#production">Мощности</a></li>
+      <li><a href="#projects">Проекты</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+      <li><a href="Help.html" class="help-button-nav">Помощь</a></li>
+    </ul>
+  
+    <div class="nav-actions">
+      <button id="theme-toggle">
+        <div class="theme-icon"></div>
+      </button>
+      <div class="language-switcher">
+        <button class="lang-btn">Русский ▼</button>
+        <ul class="lang-menu">
+          <li data-lang="ru" data-url="index.html">Русский</li>
+          <li data-lang="en" data-url="index-en.html">English</li>
+          <li data-lang="kz" data-url="index-kz.html">Қазақша</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="logo" style="background-image: url(img/logo.svg);"></div>
+
+  <section class="layers">
+    <div class="layers__container">
+      <div class="layers__item layer-1" style="background-image: url(img/1.jpg);"></div>
+      <div class="layers__item layer-3">
+        <div class="hero-content">
+          <h1>Современное машиностроение</h1>
+          <div class="hero-content__p">Инновационные технологии и высокоточные решения для промышленности.</div>
+        </div>
+      </div>
+      <div class="layers__item layer-2" style="background-image: url(img/2.png);"></div>
+      <div class="layers__item layer-4" style="background-image: url(img/3.png);"></div>
+    </div>
+  </section>
+
+  <!-- Наши возможности (перемещено выше "О заводе") -->
+  <section id="features" class="features animate">
+    <h2 class="features-title">Наши возможности</h2>
+    <p class="features-subtitle">Передовые технологии, инновационные решения и надежное производство.</p>
+    <div class="features-container">
+      <div class="feature-card">
+        <h3>Производство кранов</h3>
+        <p>Мы производим мостовые и козловые краны грузоподъемностью от 5 до 140 тонн. Наши краны соответствуют международным стандартам безопасности и обладают высокой устойчивостью к нагрузкам. Они используются на промышленных предприятиях, складах, логистических комплексах и строительных объектах.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Изготовление грейферов</h3>
+        <p>Наш завод выпускает грейферные захваты различного типа — механические, гидравлические и электромагнитные. Они широко применяются в горнодобывающей, металлургической и строительной отраслях для погрузки и транспортировки сыпучих материалов, металлолома, древесины и других грузов.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Производство металлоконструкций</h3>
+        <p>Мы изготавливаем несущие и вспомогательные металлоконструкции для строительства, энергетики, машиностроения и нефтегазовой промышленности. Используем современные технологии сварки, антикоррозийной обработки и тестирования, что гарантирует долговечность и надежность продукции.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- О заводе (перемещено ниже) -->
+  <section id="about" class="about animate">
+    <div class="about__container">
+      <img src="img/О_нас.jpg" 
+           srcset="img/О_нас-low.jpg 480w, img/О_нас.jpg 1200w" 
+           sizes="(max-width: 768px) 480px, 1200px" 
+           alt="Завод" loading="lazy">
+      <div class="about__text">
+        <h2>О заводе</h2>
+        <p>Павлодарский машиностроительный завод (ПМЗ) — один из ведущих производителей металлоконструкций и грузоподъемного оборудования в Казахстане.</p>
+        <p>Основанный в 1955 году, завод является частью ТОО «ERG Service», централизованного сервисного предприятия Евразийской Группы (ERG).</p>
+        <p>Завод оснащен современным оборудованием, включая станки с ЧПУ, лазерные и плазменные установки резки, автоматизированные линии сборки.</p>
+        <div class="button-container">
+          <a href="about.html" class="button-more">Подробнее</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- На чем мы специализируемся -->
+  <section id="specialization" class="specialization animate">
+    <h2>На чем мы специализируемся</h2>
+
+    <div class="specialization__container">
+      <!-- Блок 1 (Изображение слева, текст справа) -->
+      <div class="specialization__block">
+        <div class="specialization__image">
+          <img src="img/6.png" 
+               srcset="img/6-low.jpg 480w, img/6.png 1200w" 
+               sizes="(max-width: 768px) 480px, 1200px" 
+               alt="Производство оборудования" loading="lazy">
+        </div>
+        <div class="specialization__text">
+          <h3>Производство промышленного оборудования</h3>
+          <p>Мы разрабатываем и производим высокоточное промышленное оборудование для различных отраслей. Используем передовые технологии и системы автоматизированного контроля для обеспечения надежности и эффективности работы.</p>
+        </div>
+      </div>
+
+      <!-- Блок 2 (Текст слева, изображение справа) -->
+      <div class="specialization__block reverse">
+        <div class="specialization__text">
+          <h3>Металлообработка и машиностроение</h3>
+          <p>Наш завод специализируется на металлообработке, производстве деталей и сборке сложных конструкций. Мы обеспечиваем высокую точность, качество и соответствие международным стандартам.</p>
+        </div>
+        <div class="specialization__image">
+          <img src="img/Технический процесс.png" 
+               srcset="img/Технический процесс-low.PNG 480w, img/Технический процесс.PNG 1200w" 
+               sizes="(max-width: 768px) 480px, 1200px" 
+               alt="Металлообработка" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Блок 3 (Изображение по центру, текст справа) -->
+      <div class="specialization__block center">
+        <div class="specialization__image">
+          <img src="img/Работа.png" 
+               srcset="img/Работа-low.PNG 480w, img/Работа.PNG 1200w" 
+               sizes="(max-width: 768px) 480px, 1200px" 
+               alt="Автоматизация процессов" loading="lazy">
+        </div>
+        <div class="specialization__text">
+          <h3>Автоматизация производственных процессов</h3>
+          <p>Мы внедряем автоматизированные системы управления производством, что позволяет значительно повысить эффективность работы. Применяем инновационные технологии, интеграцию IoT и передовые методы контроля качества.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Производственные мощности -->
+  <section id="production" class="production animate">
+    <div class="production__container">
+      <h2>Производственные мощности</h2>
+      <p>Наш завод оснащен современными технологическими линиями, позволяющими выпускать продукцию высокого качества. Мы используем инновационные методы обработки металлов, автоматизированные системы контроля и передовые технологии производства.</p>
+      <p>Благодаря высокоточному оборудованию и квалифицированному персоналу, мы обеспечиваем надежность и долговечность нашей продукции, соответствующей международным стандартам.</p>
+      <a href="Moh.html" class="button-more">Подробнее</a>
+    </div>
+  </section>
+
+  <!-- Наши проекты -->
+  <section id="projects" class="section dark animate">
+    <h2 class="projects-title">Наши проекты</h2>
+    <p class="projects-subtitle">Мы реализуем сложные проекты, разрабатывая надежные решения для машиностроения.</p>
+
+    <div class="projects-slider">
+      <button class="prev-btn">❮</button>
+      <!-- Левая стрелка -->
+
+      <div class="projects-wrapper">
+        <div class="projects-container">
+          <div class="project-item" data-number="01">
+            <h3>Производство кранового оборудования</h3>
+            <p>Разработали и изготовили мостовые и козловые краны грузоподъемностью до 140 тонн для промышленных предприятий Казахстана и России.</p>
+          </div>
+
+          <div class="project-item" data-number="02">
+            <h3>Металлоконструкции для строительства</h3>
+            <p>Изготовили несущие металлоконструкции для промышленных объектов, складов и мостов, обеспечив высокую точность и надежность.</p>
+          </div>
+
+          <div class="project-item" data-number="03">
+            <h3>Автоматизация производственных линий</h3>
+            <p>Интеграция роботизированных комплексов и автоматизированных систем управления на крупных промышленных объектах.</p>
+          </div>
+
+          <div class="project-item" data-number="04">
+            <h3>Производство грейферов</h3>
+            <p>Выпустили гидравлические и механические грейферы для горнодобывающей, металлургической и строительной отрасли.</p>
+          </div>
+
+          <div class="project-item" data-number="05">
+            <h3>Разработка и модернизация промышленного оборудования</h3>
+            <p>Проектирование и модернизация станков и механизмов для повышения эффективности производственных процессов.</p>
+          </div>
+
+          <div class="project-item" data-number="06">
+            <h3>Энергетическое оборудование</h3>
+            <p>Производство теплообменников, резервуаров и других компонентов для энергетического сектора Казахстана и СНГ.</p>
+          </div>
+
+          <div class="project-item" data-number="07">
+            <h3>Аддитивные технологии</h3>
+            <p>Используем 3D-печать для быстрого прототипирования деталей и создания сложных промышленных конструкций.</p>
+          </div>
+
+          <div class="project-item" data-number="08">
+            <h3>Производство резервуаров и трубопроводных систем</h3>
+            <p>Производим стальные резервуары и трубопроводы для нефтегазовой и химической промышленности.</p>
+          </div>
+
+          <div class="project-item" data-number="09">
+            <h3>Поставка оборудования для горнодобывающих предприятий</h3>
+            <p>Изготавливаем и поставляем специализированные конструкции и механизмы для рудников и обогатительных фабрик.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="next-btn">❯</button>
+      <!-- Правая стрелка -->
+    </div>
+
+    <div class="dots-container"></div>
+  </section>
+
+  <!-- Вопросы и ответы -->
+  <section id="faq" class="faq-section animate">
+    <h2 class="faq-title">Какие вопросы могут возникнуть при знакомстве?</h2>
+
+    <div class="faq-container">
+      <!-- Вопрос 1 -->
+      <div class="faq-item">
+        <button class="faq-question">Какая основная деятельность предприятия?</button>
+        <div class="faq-answer">
+          <p>Павлодарский машиностроительный завод (ПМЗ) специализируется на производстве кранов, металлоконструкций, нестандартного промышленного оборудования и запасных частей для различных отраслей.</p>
+        </div>
+      </div>
+
+      <!-- Вопрос 2 -->
+      <div class="faq-item">
+        <button class="faq-question">Какие виды продукции выпускает завод?</button>
+        <div class="faq-answer">
+          <p>Наш завод производит мостовые и козловые краны, грейферы, резервуары, трубопроводы, строительные и технологические металлоконструкции, а также автоматизированные промышленные системы.</p>
+        </div>
+      </div>
+
+      <!-- Вопрос 3 -->
+      <div class="faq-item">
+        <button class="faq-question">Какие отрасли используют продукцию завода?</button>
+        <div class="faq-answer">
+          <p>Продукция ПМЗ применяется в металлургии, строительстве, энергетике, нефтегазовой отрасли, логистике, машиностроении и горнодобывающей промышленности.</p>
+        </div>
+      </div>
+
+      <!-- Вопрос 4 -->
+      <div class="faq-item">
+        <button class="faq-question">Можно ли заказать нестандартное оборудование?</button>
+        <div class="faq-answer">
+          <p>Да, мы занимаемся проектированием и производством нестандартного промышленного оборудования и конструкций по индивидуальным требованиям заказчика.</p>
+        </div>
+      </div>
+
+      <!-- Вопрос 5 -->
+      <div class="faq-item">
+        <button class="faq-question">Какие технологии используются в производстве?</button>
+        <div class="faq-answer">
+          <p>Мы применяем современные технологии обработки металлов, автоматизированные сварочные комплексы, системы ЧПУ, лазерную резку, 3D-моделирование и аддитивные технологии.</p>
+        </div>
+      </div>
+
+      <!-- Вопрос 6 -->
+      <div class="faq-item">
+        <button class="faq-question">Как оформить заказ на продукцию?</button>
+        <div class="faq-answer">
+          <p>Для оформления заказа свяжитесь с нами по телефону, электронной почте или через форму обратной связи на сайте. Наши специалисты помогут подобрать оптимальное решение.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Кнопка "Помощь" -->
+    <div class="faq-help">
+      <a href="Help.html" class="help-button">Помощь</a>
+    </div>
+
+  </section>
+
+  <!-- Контакты -->
+  <section id="contacts" class="contacts-section animate">
+    <h2 class="contacts-title">Контакты</h2>
+    <p class="contacts-subtitle">Свяжитесь с нами для сотрудничества и консультаций.</p>
+
+    <div class="contacts-container">
+      <div class="contact-item">
+        <h3>Адрес</h3>
+        <p>Казахстан, г. Павлодар, ул. Ломова, 180/28</p>
+      </div>
+      <div class="contact-item">
+        <h3>Телефон</h3>
+        <p>+7 (343) 270-00-50</p>
+      </div>
+      <div class="contact-item">
+        <h3>Email</h3>
+        <p>pmz-ural@pmz-ural.ru</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
