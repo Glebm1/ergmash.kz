@@ -1,0 +1,265 @@
+/* Убедимся, что body не имеет лишних отступов */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Убедимся, что навигационная панель прижата к верхнему краю */
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+}
+
+/* Секция "Свяжитесь с нами" */
+.contact-section {
+    background: #111;
+    padding: 20px 40px 60px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    margin: 80px auto; /* Увеличиваем верхний margin до 80px */
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1.3rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.contact-details a {
+    color: #f39c12;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 2px solid #f39c12;
+    background: #222;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #ffae42;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Кнопка "Отправить" */
+.submit-btn {
+    background: #f39c12;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background: #e67e22;
+    transform: scale(1.05);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Контактный текст (оранжевый email/телефон) */
+.contact-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f39c12;
+}
+
+/* Секция "Контакты и карта" */
+.contacts-section {
+    background-color: #111;
+    text-align: center;
+    padding: 80px 20px;
+    color: #fff;
+}
+
+.contacts-section h2 {
+    font-size: 3rem;
+    color: #f39c12;
+    margin-bottom: 30px;
+}
+
+.contacts-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+.contact-item {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.contact-item h3 {
+    font-size: 1.5rem;
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+/* Карта */
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Светлая тема */
+body.light-theme .contact-section {
+    background: #fdf6ef;
+    color: #111;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .contact-info p,
+body.light-theme .contact-item p,
+body.light-theme input,
+body.light-theme textarea {
+    color: #111;
+    background-color: #fff;
+    border-color: #f39c12;
+}
+
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder {
+    color: #888;
+}
+
+body.light-theme .contact-info p,
+body.light-theme .contact-details p,
+body.light-theme .contact-details span {
+    background: transparent !important;
+    color: #111;
+}
+
+body.light-theme .contact-item p,
+body.light-theme .contact-item span,
+body.light-theme .contact-item b,
+body.light-theme .contact-item strong {
+    background-color: transparent !important;
+    color: #111 !important;
+}
+
+/* Контактный текст (оставить оранжевым в светлой теме) */
+body.light-theme .contact-text {
+    color: #f39c12 !important;
+}
+
+.back-button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.button-back {
+    display: inline-block;
+    background-color: #f39c12;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button-back:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+/* Success Message Styles */
+#success-message {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f39c12;
+    color: #111;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+#success-message.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Подвал */
+.footer {
+    background: #111;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.footer p {
+    font-size: 1rem;
+    color: white;
+}
+
+/* Подвал — Светлая тема */
+body.light-theme .footer {
+    background-color: #f5f5f5;
+}
+
+body.light-theme .footer p {
+    color: #444;
+}
