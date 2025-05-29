@@ -1,0 +1,249 @@
+/* Убедимся, что body не имеет лишних отступов и имеет чёрный фон */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #000; /* Полностью чёрный фон */
+    color: #fff;
+    font-family: kamerik-3d;
+}
+
+/* Убедимся, что навигационная панель прижата к верхнему краю */
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+}
+
+/* Основной контент */
+.production {
+    padding: 80px 20px; /* Синхронизировано с about-content */
+    text-align: center;
+    max-width: 1200px; /* Синхронизировано с about-content */
+    margin: 0 auto;
+    background-color: #000; /* Явно чёрный фон для контента в тёмной теме */
+}
+
+/* Основной заголовок и подзаголовок */
+.hero-content {
+    font-size: clamp(2rem, 5vmin, 6rem);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.15rem;
+    line-height: 1.35em;
+    margin-bottom: 2rem; /* Синхронизировано с about-content */
+}
+
+.hero-content h1 {
+    color: #f39c12; /* Оранжевый цвет, синхронизировано с about.css */
+}
+
+.hero-content__p {
+    text-transform: none;
+    font-family: merriweather-italic-3d;
+    letter-spacing: normal;
+    font-size: clamp(1rem, 2vmin, 2.5rem);
+    line-height: 1.5;
+    color: #ddd; /* Светло-серый, синхронизировано с about-content */
+}
+
+/* Текст основного контента */
+.production-text {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #ddd; /* Синхронизировано с about-content */
+    text-align: center; /* Центрирование текста */
+    background-color: #000; /* Явно чёрный фон для текста в тёмной теме */
+}
+
+.production-text h2 {
+    font-size: 2.8rem; /* Синхронизировано с about-content */
+    color: #f39c12; /* Оранжевый цвет */
+    margin-top: 30px;
+    margin-bottom: 20px; /* Синхронизировано с about-content */
+}
+
+.production-text h3 {
+    font-size: 1.8rem; /* Синхронизировано с about-content */
+    color: #f39c12;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.production-text p {
+    margin-bottom: 20px;
+}
+
+.production-text ul,
+.production-text ol {
+    text-align: center; /* Центрирование списков */
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 0; /* Убираем отступ слева для центрирования */
+    list-style-position: inside; /* Маркеры списков внутри для центрирования */
+}
+
+.production-text ul li,
+.production-text ol li {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #bbb; /* Синхронизировано с about-content */
+}
+
+/* Кнопка "Вернуться на главную" */
+.button-container {
+    display: flex; /* Синхронизировано с button-container */
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.button-back {
+    display: inline-block;
+    background-color: #f39c12;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button-back:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+/* Подвал */
+.footer {
+    background: #111;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.footer p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+/* Светлая тема */
+body.light-theme {
+    background-color: #fdf6f0; /* Синхронизировано с about.css */
+    color: #111111;
+}
+
+body.light-theme .production {
+    background-color: #fdf6f0; /* Светлый фон в светлой теме, как в about-content */
+}
+
+body.light-theme .production-text {
+    background-color: #fdf6f0; /* Светлый фон для текста в светлой теме */
+    color: #444; /* Синхронизировано с about-content */
+}
+
+body.light-theme .hero-content h1 {
+    color: #f39c12; /* Оранжевый цвет */
+}
+
+body.light-theme .hero-content__p {
+    color: #444; /* Тёмно-серый, синхронизировано с about-content */
+}
+
+body.light-theme .production-text h2,
+body.light-theme .production-text h3 {
+    color: #f39c12; /* Оранжевый цвет */
+}
+
+body.light-theme .production-text ul li,
+body.light-theme .production-text ol li {
+    color: #444; /* Синхронизировано с about-content */
+}
+
+body.light-theme .button-back {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+body.light-theme .button-back:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+body.light-theme .footer {
+    background-color: #f5f5f5;
+}
+
+body.light-theme .footer p {
+    color: #444;
+}
+
+body.light-theme .theme-icon {
+    background-color: black; /* Синхронизировано с about.css */
+}
+
+body.light-theme #theme-toggle {
+    background-color: transparent; /* Синхронизировано с about.css */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .production {
+        padding: 60px 15px; /* Синхронизировано с about-content */
+    }
+
+    .hero-content {
+        font-size: clamp(1.5rem, 4vmin, 4rem);
+    }
+
+    .hero-content__p {
+        font-size: clamp(0.9rem, 1.8vmin, 2rem);
+        line-height: 1.5;
+    }
+
+    .production-text h2 {
+        font-size: 2.2rem; /* Синхронизировано с about-content */
+    }
+
+    .production-text h3 {
+        font-size: 1.5rem; /* Синхронизировано с about-content */
+    }
+
+    .production-text,
+    .production-text ul li,
+    .production-text ol li {
+        font-size: 1.1rem; /* Синхронизировано с about-content */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        font-size: clamp(1.2rem, 3.5vmin, 3rem);
+    }
+
+    .hero-content__p {
+        font-size: clamp(0.8rem, 1.5vmin, 1.5rem);
+        line-height: 1.5;
+    }
+
+    .production-text h2 {
+        font-size: 1.8rem; /* Синхронизировано с about-content */
+    }
+
+    .production-text h3 {
+        font-size: 1.3rem; /* Синхронизировано с about-content */
+    }
+
+    .production-text,
+    .production-text ul li,
+    .production-text ol li {
+        font-size: 1rem; /* Синхронизировано с about-content */
+    }
+
+    .button-back {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
