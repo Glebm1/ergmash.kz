@@ -308,3 +308,48 @@ app.post('/send-email', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const featureCards = document.querySelectorAll('.feature-card');
+
+  featureCards.forEach(card => {
+    // Handle touch events for mobile devices
+    card.addEventListener('touchstart', () => {
+      card.classList.toggle('hover');
+    });
+
+    // Optional: Remove hover class when clicking outside
+    document.addEventListener('touchstart', (e) => {
+      if (!card.contains(e.target)) {
+        card.classList.remove('hover');
+      }
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const featureCards = document.querySelectorAll('.feature-card');
+
+  featureCards.forEach(card => {
+    // Обработчик нажатий для мобильных устройств
+    card.addEventListener('touchstart', (e) => {
+      e.preventDefault(); // Предотвращаем нежелательное поведение, например, выделение текста
+      // Если карточка уже активна, убираем класс .hover
+      if (card.classList.contains('hover')) {
+        card.classList.remove('hover');
+      } else {
+        // Убираем класс .hover у всех карточек
+        featureCards.forEach(otherCard => otherCard.classList.remove('hover'));
+        // Добавляем класс .hover к текущей карточке
+        card.classList.add('hover');
+      }
+    });
+
+    // Закрытие описания при нажатии вне карточки
+    document.addEventListener('touchstart', (e) => {
+      if (!card.contains(e.target)) {
+        card.classList.remove('hover');
+      }
+    });
+  });
+});
