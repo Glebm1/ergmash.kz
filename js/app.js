@@ -8,6 +8,47 @@ document.addEventListener('mousemove', e => {
     });
 });
 
+// Плавный переход для логотипа
+    const logoLink = document.querySelector('.navbar a[href="index.html"] img');
+    if (logoLink) {
+        logoLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            logoLink.classList.add('clicked');
+            setTimeout(() => {
+                window.location.href = logoLink.parentElement.getAttribute('href');
+            }, 300); // Задержка соответствует длительности анимации в CSS
+        });
+    }
+
+    // Сохранение позиции прокрутки при смене языка
+    const savedScrollPosition = localStorage.getItem('scrollPosition');
+    if (savedScrollPosition) {
+        window.scrollTo(0, parseInt(savedScrollPosition));
+        try {
+            localStorage.removeItem('scrollPosition'); // Очистить после восстановления
+        } catch (e) {
+            console.warn('Не удалось удалить scrollPosition из localStorage:', e);
+        }
+    }
+
+    const langMenuItems = document.querySelectorAll('.lang-menu li');
+    const langBtn = document.querySelector('.lang-btn');
+    if (langBtn && langMenuItems) {
+        langMenuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const selectedLang = item.textContent;
+                const targetUrl = item.getAttribute('data-url');
+                try {
+                    localStorage.setItem('scrollPosition', window.scrollY); // Сохранить текущую позицию
+                } catch (e) {
+                    console.warn('Не удалось сохранить scrollPosition в localStorage:', e);
+                }
+                langBtn.textContent = `${selectedLang} ▼`;
+                window.location.href = targetUrl;
+            });
+        });
+    }
+
 // Слайдер в секции "Наши проекты"
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.querySelector('.projects-slider');
