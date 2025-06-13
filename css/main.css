@@ -5,12 +5,13 @@
     box-sizing: border-box; 
 }
 
-/* Убедимся, что body не создает горизонтальной прокрутки */
+/* Убедимся, что body не создает горизонтальной прокрутки и имеет минимальную высоту */
 body {
     overflow-x: hidden;
     background-color: #000;   
     color: #fff;              
     font-family: kamerik-3d;   
+    min-height: 100vh; /* Гарантирует прокрутку */
 }
 
 /* Определение корневых переменных для динамических размеров и переходов */
@@ -82,17 +83,17 @@ p {
     display: block;
     transform: scale(2.1);
     margin-left: 20px;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Плавный переход для логотипа */
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .navbar img:hover {
     opacity: 0.8;
-    transform: scale(2.2); /* Легкое увеличение при наведении */
+    transform: scale(2.2);
 }
 
 .navbar img.clicked {
     opacity: 0.5;
-    transform: scale(2); /* Эффект при клике */
+    transform: scale(2);
 }
 
 /* Стили для ссылок навигации */
@@ -326,6 +327,17 @@ p {
 .about__container img {
     width: 50%;
     border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.about__container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+    border: 2px solid #fff;
+}
+
+body.light-theme .about__container img:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
 }
 
 .about__text {
@@ -655,6 +667,17 @@ body.light-theme .feature-card.hover {
     width: 100%;
     max-width: 450px;
     border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.specialization__image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+    border: 2px solid #fff;
+}
+
+body.light-theme .specialization__image img:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
 }
 
 .specialization__text {
@@ -933,6 +956,36 @@ body.light-theme .feature-card.hover {
     text-decoration: underline;
 }
 
+/* Подвал */
+.footer {
+    background: #111;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.footer p {
+    font-size: 1rem;
+    color: #bbb;
+    font-family: merriweather-italic-3d, serif;
+}
+
+/* Светлая тема для подвала */
+body.light-theme .footer {
+    background-color: #f5f5f5;
+}
+
+body.light-theme .footer p {
+    color: #444;
+}
+
+/* Адаптивность для подвала */
+@media (max-width: 480px) {
+    .footer p {
+        font-size: 0.9rem;
+    }
+}
+
 /* Светлая тема */
 body.light-theme {
     --background-color: #ffffff;
@@ -1089,7 +1142,7 @@ body.light-theme .lang-menu li:hover {
 body.light-theme .about,
 body.light-theme .specialization,
 body.light-theme .production,
-body-light-theme .contacts-section {
+body.light-theme .contacts-section {
     background-color: #fdf6f0;
 }
 
@@ -1716,7 +1769,7 @@ p {
     }
 }
 
-/* Анимация для элементов */
+/* Анимация для элементов (кроме подвала) */
 .animate {
     opacity: 0;
     transform: translateY(20px);
